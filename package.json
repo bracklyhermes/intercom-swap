@@ -3,23 +3,36 @@
   "version": "0.0.1",
   "type": "module",
   "main": "index.js",
+
   "scripts": {
     "test": "node --test test/*.test.js",
-    "test:e2e": "node --test --test-concurrency=1 test-e2e/*.test.js"
+    "test:e2e": "node --test --test-concurrency=1 test-e2e/*.test.js",
+    "assistant": "tsx app/server.ts",
+    "cli": "tsx cli/intercom-cli.ts"
   },
+
   "pear": {
     "name": "contract-test-latest",
     "type": "terminal"
   },
+
   "dependencies": {
     "@solana/spl-token": "^0.4.14",
     "@solana/web3.js": "^1.98.4",
+    "@types/express": "^5.0.6",
+    "axios": "^1.13.5",
     "b4a": "^1.6.7",
     "bare-ws": "2.0.3",
     "bech32": "^2.0.0",
+    "chalk": "^5.6.2",
+    "cli-table3": "^0.6.5",
+    "commander": "^14.0.3",
     "compact-encoding": "^2.18.0",
     "crypto": "npm:bare-node-crypto",
+    "decimal.js": "^10.6.0",
+    "express": "^5.2.1",
     "fs": "npm:bare-node-fs",
+    "ora": "^9.3.0",
     "path": "npm:bare-node-path",
     "protomux": "^3.10.1",
     "trac-msb": "git+https://github.com/Trac-Systems/main_settlement_bus.git#5088921",
@@ -27,7 +40,15 @@
     "trac-wallet": "1.0.1",
     "util": "npm:bare-node-util"
   },
+
   "overrides": {
     "trac-wallet": "1.0.1"
+  },
+
+  "devDependencies": {
+    "@types/node": "^25.3.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
   }
 }
